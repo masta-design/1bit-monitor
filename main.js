@@ -110,7 +110,7 @@ loader.load(
     }
 
     const progress = Math.min(99, Math.round((event.loaded / event.total) * 100));
-    loaderLabel.textContent = `Загрузка 3D-модели ${progress}%`;
+    loaderLabel.textContent = `Загрузка компьютера ${progress}%`;
   },
   (error) => {
     console.error(error);
@@ -135,8 +135,16 @@ function applyVideoTextureToScreen(model) {
   videoTexture.minFilter = THREE.LinearFilter;
   videoTexture.magFilter = THREE.LinearFilter;
 
-  const screenMaterial = new THREE.MeshBasicMaterial({
+  const screenMaterial = new THREE.MeshPhysicalMaterial({
     map: videoTexture,
+    emissive: 0xffffff,
+    emissiveIntensity: 0.55,
+    emissiveMap: videoTexture,
+    metalness: 0,
+    roughness: 0.18,
+    clearcoat: 1,
+    clearcoatRoughness: 0.08,
+    reflectivity: 0.55,
     toneMapped: false
   });
 
