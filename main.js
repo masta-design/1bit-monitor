@@ -203,7 +203,7 @@ function resize() {
   );
   const viewWidth = viewHeight * aspect;
   const horizontalOffset = viewWidth * 0.05;
-  const verticalOffset = viewHeight * (isMobile ? 0.08 : isTablet ? 0.12 : 0.16);
+  const verticalOffset = viewHeight * (isMobile ? 0.14 : isTablet ? 0.15 : 0.16);
 
   camera.left = cameraBounds.centerX - viewWidth / 2 - horizontalOffset;
   camera.right = cameraBounds.centerX + viewWidth / 2 - horizontalOffset;
