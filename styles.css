@@ -359,8 +359,8 @@ a {
   .hero__visual {
     flex: none;
     align-self: center;
-    width: 576px;
-    height: 440px;
+    width: 864px;
+    height: 660px;
     max-width: none;
   }
 }
