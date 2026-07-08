@@ -358,8 +358,10 @@ a {
 
   .hero__visual {
     flex: none;
-    width: 100%;
-    height: 400px;
+    align-self: center;
+    width: 576px;
+    height: 440px;
+    max-width: none;
   }
 }
 
@@ -394,10 +396,6 @@ a {
   .hero__lead {
     font-size: 16px;
     line-height: 20px;
-  }
-
-  .hero__visual {
-    height: clamp(240px, 72vw, 360px);
   }
 
   .model-loader {
