@@ -4,6 +4,8 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 const canvas = document.querySelector("#hero-canvas");
 const visual = document.querySelector(".hero__visual");
 const status = document.querySelector("#scene-status");
+const loaderElement = document.querySelector("#model-loader");
+const loaderLabel = document.querySelector("#model-loader-label");
 
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
@@ -96,14 +98,26 @@ loader.load(
     topCrtBaseRotation = topCrtNode ? topCrtNode.rotation.clone() : null;
     modelReady = true;
 
+    visual.classList.add("is-loaded");
+    loaderElement.classList.add("is-hidden");
     status.textContent = topCrtNode ? "" : "Узел Top-CRT не найден";
     status.classList.toggle("is-hidden", Boolean(topCrtNode));
     resize();
   },
-  undefined,
+  (event) => {
+    if (!event.lengthComputable) {
+      return;
+    }
+
+    const progress = Math.min(99, Math.round((event.loaded / event.total) * 100));
+    loaderLabel.textContent = `Загрузка 3D-модели ${progress}%`;
+  },
   (error) => {
     console.error(error);
+    visual.classList.add("is-loaded");
+    loaderElement.classList.add("is-hidden");
     status.textContent = "Не удалось загрузить 3D-модель";
+    status.classList.remove("is-hidden");
   }
 );
 
