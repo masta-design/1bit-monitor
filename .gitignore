@@ -1,0 +1,11 @@
+.agents/
+.git-codex/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Local runtime/cache folders
+node_modules/
+dist/
+build/

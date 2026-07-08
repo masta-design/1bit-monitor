@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1БИТ Monitor</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three.module.js?v=2",
+          "three/addons/loaders/GLTFLoader.js": "./vendor/GLTFLoader.js?v=2"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <img class="page-grid" src="./assets/backround-illustration.png" alt="" aria-hidden="true">
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <header class="site-header" aria-label="Шапка сайта">
+          <div class="site-header__primary">
+            <a class="site-header__brand" href="/" aria-label="На главную">
+              <img src="./assets/logo-1b.svg" alt="Первый БИТ Челябинск">
+            </a>
+            <a class="site-header__phone" href="tel:+79000000000">+7 900 000-00-00</a>
+          </div>
+          <p class="site-header__mission">
+            Наша миссия — проектировать и воплощать сложные, но безупречно работающие экосистемы, где технологии служат людям и решают реальные задачи
+          </p>
+        </header>
+
+        <div class="hero__body">
+          <div class="hero__content">
+            <h1 id="hero-title">Мы — создатели цифровой среды, в которой живёт и развивается ваш бизнес</h1>
+            <p class="hero__lead">
+              Наша миссия — проектировать и воплощать сложные, но безупречно работающие экосистемы, где технологии служат людям и решают реальные задачи
+            </p>
+            <a class="button button--primary" href="#brief">Заполнить бриф</a>
+          </div>
+
+          <div class="hero__visual" id="model">
+            <canvas id="hero-canvas" aria-label="3D модель рабочего места"></canvas>
+            <p class="hero__status" id="scene-status">Загрузка модели...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
